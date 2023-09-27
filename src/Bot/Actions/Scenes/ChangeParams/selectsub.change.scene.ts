@@ -6,7 +6,7 @@ import { deunionize } from "telegraf";
 
 
 @Scene(BOT_CHANGE_CREATETASK_SCENE)
-export class botChangeCreateTaskScene {
+export class BotChangeCreateTaskScene {
 
     @SceneEnter()
     async onSceneEnter(context: Context): Promise<void> {

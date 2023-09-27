@@ -1,6 +1,6 @@
 import { Hears, On, Scene, SceneEnter } from "nestjs-telegraf";
 import { Context } from "src/Bot/Interfaces/context.interface";
-import { BOT_CREATETASK_SCENE, BOT_SELECTGEO_SCENE, session } from "src/Bot/bot.constants";
+import { BOT_CREATETASK_SCENE, BOT_SELECTGEO_SCENE, BOT_SELECTLANG_SCENE, session } from "src/Bot/bot.constants";
 import { Markup, deunionize } from "telegraf";
 
 
@@ -14,16 +14,8 @@ export class BotCreateTaskScene {
     async onSceneEnter(context: Context) {
 
         session.current_scene = BOT_CREATETASK_SCENE;
-
-        if(session.sub_id) {
-
-            await context.reply(`Ваш текущий SUB -> ${session.sub_id}\n`, Markup.keyboard(['Продолжить']));
-
-        }
-        else {
-            await context.reply('Введите свой SUB ниже 🔽');
-        }
-
+        await context.reply('Введите свой SUB ниже 🔽');
+        
     }
 
 
@@ -32,7 +24,7 @@ export class BotCreateTaskScene {
 
         session.sub_id = await deunionize(context.message).text;
 
-        context.scene.enter(BOT_SELECTGEO_SCENE);
+        context.scene.enter(BOT_SELECTLANG_SCENE);
 
     }
 

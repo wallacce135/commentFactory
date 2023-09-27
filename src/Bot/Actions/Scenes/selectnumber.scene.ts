@@ -16,9 +16,15 @@ export class BotSelectCommentNumberScene {
     @On('text')
     async onTextMessage(context: Context): Promise<void> {
 
-        session.current_comment_number = deunionize(context.message).text;
-        
-        context.scene.enter(BOT_SELECTLINK_SCENE);
+        if(Number(deunionize(context.message).text) > 50) {
+            await context.reply('Введите значение меньше 50!')
+            context.scene.enter(BOT_SELECTCOMMENTNUMBER_SCENE);
+        }
+        else  {
+            session.current_comment_number = deunionize(context.message).text;
+            context.scene.enter(BOT_SELECTLINK_SCENE);
+        }
+
 
     }
 

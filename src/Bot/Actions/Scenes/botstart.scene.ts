@@ -12,7 +12,6 @@ export class BotStartScene {
     @SceneEnter()
     async onSceneEnter(context: Context): Promise<void> {
 
-        session.current_scene = BOT_START_SCENE;
 
        await context.reply(`Привет, ${context.message?.from?.first_name || context.message?.from?.username}!\nНажми кнопку ниже для продолжения`, Markup.keyboard(['Создать новую задачу']).oneTime());
     }

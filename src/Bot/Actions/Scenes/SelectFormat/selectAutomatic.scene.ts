@@ -10,7 +10,7 @@ export class BotSelectAutomaticCommentsScene {
 
 
     @SceneEnter()
-    async onSceneEnter(context:Context){
+    async onSceneEnter(context:Context): Promise<void> {
 
         const finalString = `bot_start2|${session.sub_id2}|${session.current_link}|${session.sub_id}|${session.current_language}|${session.current_comment_number}`
 

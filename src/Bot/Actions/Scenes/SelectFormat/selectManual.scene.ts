@@ -10,13 +10,13 @@ import { deunionize } from "telegraf";
 export class BotSelectManualCommentsScene {
 
     @SceneEnter()
-    async onSceneEnter(context: Context) {
+    async onSceneEnter(context: Context): Promise<void> {
         await context.reply('Введите комментарии в формате "комментарий1&комментарий2&комментарий3"');
     }
 
 
     @On('text')
-    async onTextMessage(context: Context) {
+    async onTextMessage(context: Context): Promise<void> {
 
         session.current_comment_string = await deunionize(context.message).text;
 

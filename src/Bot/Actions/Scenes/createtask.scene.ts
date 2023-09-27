@@ -11,16 +11,15 @@ import { Markup, deunionize } from "telegraf";
 export class BotCreateTaskScene {
 
     @SceneEnter()
-    async onSceneEnter(context: Context) {
+    async onSceneEnter(context: Context): Promise<void> {
 
-        session.current_scene = BOT_CREATETASK_SCENE;
         await context.reply('Введите свой SUB ниже 🔽');
         
     }
 
 
     @On("message")
-    async onTextMessage(context: Context) {
+    async onTextMessage(context: Context): Promise<void> {
 
         session.sub_id = await deunionize(context.message).text;
 

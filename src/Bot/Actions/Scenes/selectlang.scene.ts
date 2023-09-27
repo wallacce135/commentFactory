@@ -16,7 +16,7 @@ export class BotSelectLangScene {
     }
 
     @On('text')
-    async onTextMessage(context: Context) {
+    async onTextMessage(context: Context): Promise<void> {
         session.current_language = deunionize(context.message).text;
 
         if(session.current_type === 'manual'){

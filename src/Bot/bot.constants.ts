@@ -1,3 +1,5 @@
+import { IConstants } from "./Interfaces/constants.interface";
+
 export const BOT_NAME: string = "COMMENT_FACTORY_BOT";
 export const BOT_START_SCENE: string = "BOT_START_SCENE";
 
@@ -19,14 +21,12 @@ export const BOT_PRESELECTFORMATBUILD_SCENE: string = "BOT_PRESELECTFORMATBUILD_
 export const BOT_SELECTMANUALCOMMENTS_SCENE: string = "BOT_SELECTMANUALCOMMENTS_SCENE";
 export const BOT_SELECTAUTOMATICCOMMENTS_SCENE: string = "BOT_SELECTAUTOMATICCOMMENTS_SCENE";
 
-export let session = { 
-    sub_id: null,
-    sub_id2: null,
-    current_scene: null, 
-    current_geo: null, 
-    current_link: null,
-    current_language: null,
-    current_comment_number: null,
-    current_comment_string: null,
-    current_type: null
+export let session: IConstants = { 
+    sub_id: '',
+    sub_id2: '',
+    current_link: '',
+    current_language: '',
+    current_comment_number: '',
+    current_comment_string: '',
+    current_type: '',
 };

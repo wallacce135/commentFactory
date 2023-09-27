@@ -18,7 +18,7 @@ export class BotChangeSelectLangScene {
 
 
     @On('text')
-    async onTextMessage(context: Context) {
+    async onTextMessage(context: Context): Promise<void> {
         session.current_language = deunionize(context.message).text;
 
         context.scene.enter(BOT_PREBUILD_SCENE);

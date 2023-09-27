@@ -27,13 +27,13 @@ export class BotPreSelectFormatScene {
     }
 
     @Hears('Ручное заполнение')
-    async ManualSelect(context: Context) {
+    async ManualSelect(context: Context): Promise<void> {
         session.current_type = 'manual';
         context.scene.enter(BOT_CREATETASK_SCENE);
     }
 
     @Hears('Выбрать из таблицы')
-    async AutomticSelect(context: Context) {
+    async AutomticSelect(context: Context): Promise<void> {
         session.current_type = 'automatic';
         context.scene.enter(BOT_CREATETASK_SCENE);
     }

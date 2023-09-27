@@ -45,7 +45,7 @@ export class BotPreBuildScene {
     }
 
     @Hears('Продолжить')
-    async selectContinue(context: Context){
+    async selectContinue(context: Context): Promise<void> {
 
         if(session.current_type === 'automatic'){
             context.scene.enter(BOT_SELECTAUTOMATICCOMMENTS_SCENE);
@@ -59,7 +59,7 @@ export class BotPreBuildScene {
     }
 
 
-    async generateUniqueId(length: number) {
+    async generateUniqueId(length: number): Promise<string> {
         let result: string = '';
         const characters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         const charactersLength: number = characters.length;

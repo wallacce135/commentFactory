@@ -14,7 +14,7 @@ import { ActionsModule } from './Actions/actions.module';
             useFactory: (configService: ConfigService) => ({
                 token: configService.get<string>("TELEGRAM_BOT_TOKEN"),
                 middlewares: [sessionMiddleware],
-                include: [ActionsModule]
+                include: [ActionsModule],
             })
         }),
 

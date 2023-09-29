@@ -15,6 +15,7 @@ import { BotSelectLangScene } from "./Scenes/selectlang.scene";
 import { BotPreSelectFormatScene } from "./Scenes/botPreSelectFormat.scene";
 import { BotSelectManualCommentsScene } from "./Scenes/SelectFormat/selectManual.scene";
 import { BotSelectAutomaticCommentsScene } from "./Scenes/SelectFormat/selectAutomatic.scene";
+import { GoogleSpreadSheetService } from "./Scenes/SelectFormat/google.service";
 
 
 
@@ -38,7 +39,9 @@ import { BotSelectAutomaticCommentsScene } from "./Scenes/SelectFormat/selectAut
         BotPreSelectFormatScene,
 
         BotSelectManualCommentsScene,
-        BotSelectAutomaticCommentsScene
+        BotSelectAutomaticCommentsScene,
+
+        GoogleSpreadSheetService
         
         
     ],

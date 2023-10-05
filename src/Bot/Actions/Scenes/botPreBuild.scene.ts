@@ -61,7 +61,7 @@ export class BotPreBuildScene {
     
             console.log('finalString -> ', finalString)
 
-            // this.googleSpreadSheetService.googleTableProcess(finalString, new Date(), String(context.message.chat.id));
+            this.googleSpreadSheetService.googleTableProcess(finalString, new Date(), String(context.message.chat.id));
             context.scene.enter(BOT_PRESELECTFORMATBUILD_SCENE);
 
         }
@@ -78,7 +78,7 @@ export class BotPreBuildScene {
             
             console.log('finalString -> ', finalString)
 
-            // this.googleSpreadSheetService.googleTableProcess(finalString, new Date(), String(context.message.chat.id));
+            this.googleSpreadSheetService.googleTableProcess(finalString, new Date(), String(context.message.chat.id));
 
             context.scene.enter(BOT_PRESELECTFORMATBUILD_SCENE);
         }

@@ -80,6 +80,15 @@ export class BotPreBuildScene {
 
             this.googleSpreadSheetService.googleTableProcess(finalString, new Date(), String(context.message.chat.id));
 
+
+            session.sub_id = null;
+            session.sub_id2 = null;
+            session.current_link = null,
+            session.current_language = null,
+            session.current_comment_number = null,
+            session.current_comment_string = null,
+            session.current_type = null
+
             context.scene.enter(BOT_PRESELECTFORMATBUILD_SCENE);
         }
 

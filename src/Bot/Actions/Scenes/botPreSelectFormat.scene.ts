@@ -21,6 +21,8 @@ export class BotPreSelectFormatScene {
         session.current_comment_string = null,
         session.current_type = null
 
+        
+
         await context.reply(`Привет, ${context.message?.from?.first_name || context.message?.from?.username}!\nВыберите формат заполнения комментариев`, Markup.keyboard(['Ручное заполнение', 'Выбрать из таблицы']).oneTime())
 
 
